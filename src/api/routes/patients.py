@@ -16,25 +16,25 @@ def retrieve_patients():
 	return {"data": patients}
 
 
-# @router.get("/{patient_id}", status_code=200)
-# def retrieve_patient(patient_id: str):
-# 	if patient_id not in patients:
-# 		raise HTTPException(
-# 			status_code=400,
-# 			detail="Patient does not exist"
-# 		)
+@router.get("/{patient_id}", status_code=200)
+def retrieve_patient(patient_id: str):
+	if patient_id not in patients:
+		raise HTTPException(
+			status_code=400,
+			detail="Patient does not exist"
+		)
 	
-# 	patient = patients[patient_id]
-# 	# if not patient:
-# 	# 	raise HTTPException(
-# 	# 		status_code=400,
-# 	# 		detail="Patient ID does not exist"
-# 	# 	)
+	patient = patients[patient_id]
+	# if not patient:
+	# 	raise HTTPException(
+	# 		status_code=400,
+	# 		detail="Patient ID does not exist"
+	# 	)
 
-	# return Response(
-	# 	msg="Patient Found",
-	# 	data=patient
-	# )
+	return Response(
+		msg="Patient Found",
+		data=patient
+	)
 
 @router.post("", status_code=201)
 def create_patient(payload: PatientCreate):
