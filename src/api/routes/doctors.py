@@ -1,9 +1,8 @@
-from typing import Mapping
+# from typing import Mapping
 from fastapi import APIRouter
+from src.schemas.doctors import Doctor
 
-from schemas.doctors import Doctor
-
-doctors_router = APIRouter()
+router = APIRouter()
 # doctor_id: int
 # 	name: str
 # 	specialization: str
@@ -24,14 +23,14 @@ doctors: dict[str, Doctor] = {
 		"name": "Brian",
 		"specialization": "Chemist",
 		"phone": "+9126252281",
-		"is_available": False,
+		"is_available": True,
 		"email": "Josh@ymail.com"
 	}
 }
 
-@doctors_router.get("", status_code=200)
+@router.get("", status_code=200)
 def get_index():
-	return {"data": "home works"}
+	return {"data": doctors}
 
 # @doctors_router.post("/new", status_code=201)
 # def create_doctor(payload):

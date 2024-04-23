@@ -1,7 +1,7 @@
 from typing import Any
-from schemas.appointment import Appointment
-from schemas.doctors import Doctor
-from schemas.patients import Patient
+from src.schemas.doctors import Doctor
+from src.schemas.appointment import Appointment
+from src.schemas.patients import Patient
 from pydantic import BaseModel
 
 class Response(BaseModel):

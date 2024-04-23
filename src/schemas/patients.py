@@ -14,10 +14,6 @@ class Patient(TypedDict):
 	phone: str
 	email: str
 
-class P(BaseModel):
-	id: str
-	patient: dict
-
 class PatientCreate(BaseModel):
 	name: str
 	age: int
