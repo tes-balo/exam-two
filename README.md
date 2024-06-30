@@ -25,7 +25,7 @@ git clone https://github.com/Ho011/small_sms_api.git
 ```
 
 ```sh
-cd small_sms_api
+cd medical-appointment-system
 ```
 
 ```sh
@@ -39,6 +39,10 @@ Once the prerequisites are met, The following steps can be used to get the appli
 ```sh
 uvicorn src.main:app --reload
 ```
+
+###
+
+Open your browser and navigate to [](http://localhost:8000/docs) to test and interact with the API endpoints.
 
 ## Note
 
